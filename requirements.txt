@@ -9,6 +9,7 @@ unstructured==0.5.11
 uvicorn==0.21.1
 xlsx2html==0.4.2
 XlsxWriter==3.0.9
-opencv-python==4.7.0.72
+# opencv-python==4.7.0.72
+opencv-python-headless==4.7.0.72
 pytesseract==0.3.10
 langdetect==1.0.9
