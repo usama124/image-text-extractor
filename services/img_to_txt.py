@@ -68,13 +68,14 @@ def grayscale(image):
 def img_to_txt(img_path: str):
     import os, shutil
     if not os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
+        print("rus.traineddata file not exists, copying...")
         rus_traindata_file_path = "/app/traineddata/rus.traineddata"
         shutil.copy(rus_traindata_file_path, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
 
-    if os.path.exists("/app/.apt/usr/bin/tesseract"):
-        print("tesseract file exists")
+    if os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
+        print("rus.traineddata file exists")
     else:
-        print("tesseract file not exists")
+        print("rus.traineddata file not exists")
 
     img = cv2.imread(img_path)
     fixed = deskew(img)
