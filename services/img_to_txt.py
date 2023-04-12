@@ -66,14 +66,10 @@ def grayscale(image):
 
 
 def img_to_txt(img_path: str):
-    import os, wget, shutil
+    import os, shutil
     if not os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
-        rus_traindata_file_url = "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/master/rus.traineddata"
-        file_name = wget.download(rus_traindata_file_url)
-        shutil.move(file_name, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
-
-    # pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
-    # print(pytesseract.pytesseract.tesseract_cmd)
+        rus_traindata_file_path = "traineddata/rus.traineddata"
+        shutil.copy(rus_traindata_file_path, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
 
     if os.path.exists("/app/.apt/usr/bin/tesseract"):
         print("tesseract file exists")
