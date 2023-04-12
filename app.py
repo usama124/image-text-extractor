@@ -7,10 +7,7 @@ from fastapi import FastAPI
 
 from routers import root_router, excel_to_csv_router, image_to_text_router
 
-if not os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
-    rus_traindata_file_url = "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/master/rus.traineddata"
-    file_name = wget.download(rus_traindata_file_url)
-    shutil.move(file_name, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
+
 
 # Metadata for the swagger documentation for each endpoint
 tags_metadata = [

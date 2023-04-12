@@ -2,7 +2,6 @@ import cv2
 import pytesseract
 from langdetect import detect_langs
 
-pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
 
 try:
     from PIL import Image
@@ -67,6 +66,20 @@ def grayscale(image):
 
 
 def img_to_txt(img_path: str):
+    import os, wget, shutil
+    if not os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
+        rus_traindata_file_url = "https://raw.githubusercontent.com/tesseract-ocr/tessdata_best/master/rus.traineddata"
+        file_name = wget.download(rus_traindata_file_url)
+        shutil.move(file_name, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
+
+    pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
+    print(pytesseract.pytesseract.tesseract_cmd)
+
+    if os.path.exists("/app/.apt/usr/bin/tesseract"):
+        print("tesseract file exists")
+    else:
+        print("tesseract file not exists")
+
     img = cv2.imread(img_path)
     fixed = deskew(img)
     # cv2.imwrite("rotated_fixed.jpg", fixed)
