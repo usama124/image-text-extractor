@@ -68,7 +68,7 @@ def grayscale(image):
 def img_to_txt(img_path: str):
     import os, shutil
     if not os.path.exists("/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/rus.traineddata"):
-        rus_traindata_file_path = "traineddata/rus.traineddata"
+        rus_traindata_file_path = "/app/traineddata/rus.traineddata"
         shutil.copy(rus_traindata_file_path, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
 
     if os.path.exists("/app/.apt/usr/bin/tesseract"):
