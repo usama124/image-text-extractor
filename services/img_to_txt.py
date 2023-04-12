@@ -72,8 +72,8 @@ def img_to_txt(img_path: str):
         file_name = wget.download(rus_traindata_file_url)
         shutil.move(file_name, "/app/.apt/usr/share/tesseract-ocr/4.00/tessdata/")
 
-    pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
-    print(pytesseract.pytesseract.tesseract_cmd)
+    # pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
+    # print(pytesseract.pytesseract.tesseract_cmd)
 
     if os.path.exists("/app/.apt/usr/bin/tesseract"):
         print("tesseract file exists")
