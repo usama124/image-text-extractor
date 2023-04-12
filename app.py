@@ -13,7 +13,7 @@ from routers import root_router, excel_to_csv_router, image_to_text_router
 tags_metadata = [
     {
         "name": "Excel to CSV",
-        "description": "All endpoints related to Exams Questions answers"
+        "description": "All endpoints related to Image Text Extractor and Excel to CSV converter."
     },
     {
         "name": "Root",
