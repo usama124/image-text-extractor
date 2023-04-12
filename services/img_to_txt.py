@@ -2,6 +2,8 @@ import cv2
 import pytesseract
 from langdetect import detect_langs
 
+pytesseract.pytesseract.tesseract_cmd = "/app/.apt/usr/bin/tesseract"
+
 try:
     from PIL import Image
 except ImportError:
