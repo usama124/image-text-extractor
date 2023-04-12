@@ -1,13 +1,6 @@
-import uvicorn
-import os.path
-import shutil
-import wget
-
 from fastapi import FastAPI
 
 from routers import root_router, excel_to_csv_router, image_to_text_router
-
-
 
 # Metadata for the swagger documentation for each endpoint
 tags_metadata = [
