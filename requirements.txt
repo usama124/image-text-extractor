@@ -13,3 +13,4 @@ uvicorn==0.21.1
 xlsx2html==0.4.2
 XlsxWriter==3.0.9
 langdetect==1.0.9
+wget==3.2
